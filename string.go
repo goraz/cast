@@ -51,11 +51,11 @@ func String(input interface{}) (output string, err error) {
 		output = strconv.FormatUint(uint64(castValue), 10)
 		return
 	case float32:
-		// What exac value for perc value
+		// What exact value for perc value
 		output = strconv.FormatFloat(float64(castValue), 'g', -1, 64)
 		return
 	case float64:
-		// What exac value for perc value
+		// What exact value for perc value
 		output = strconv.FormatFloat(castValue, 'g', -1, 64)
 		return
 	case nil:
