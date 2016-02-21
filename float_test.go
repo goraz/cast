@@ -162,7 +162,7 @@ func TestFloatCast(t *testing.T) {
 		So(castNegativeVal, ShouldEqual, -1.2)
 	})
 
-	Convey("Cast int to float", t, func() {
+	Convey("Cast bool to float", t, func() {
 		val := true
 		castVal, _ := Float(val)
 		So(castVal, ShouldEqual, 1)
@@ -170,6 +170,11 @@ func TestFloatCast(t *testing.T) {
 		falseVal := false
 		castFalseVal, _ := Float(falseVal)
 		So(castFalseVal, ShouldEqual, 0)
+	})
+
+	Convey("Cast nil to float", t, func() {
+		castVal, _ := Float(nil)
+		So(castVal, ShouldEqual, 0)
 	})
 
 	Convey("Cast string to float", t, func() {

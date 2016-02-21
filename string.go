@@ -58,6 +58,9 @@ func String(input interface{}) (output string, err error) {
 		// What exac value for perc value
 		output = strconv.FormatFloat(castValue, 'g', -1, 64)
 		return
+	case nil:
+		output = ""
+		return
 	case bool:
 		output = strconv.FormatBool(castValue)
 		return

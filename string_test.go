@@ -173,6 +173,11 @@ func TestStringCast(t *testing.T) {
 		So(castFalseVal, ShouldEqual, "false")
 	})
 
+	Convey("Cast nil to string", t, func() {
+		castVal, _ := String(nil)
+		So(castVal, ShouldEqual, "")
+	})
+
 	Convey("Cast string to string", t, func() {
 
 		val := "abc"

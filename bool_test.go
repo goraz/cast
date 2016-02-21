@@ -172,6 +172,11 @@ func TestBoolCast(t *testing.T) {
 		So(castFalseVal, ShouldEqual, false)
 	})
 
+	Convey("Cast nil to bool", t, func() {
+		castVal, _ := Bool(nil)
+		So(castVal, ShouldEqual, false)
+	})
+
 	Convey("Cast string to bool", t, func() {
 		val := "true"
 		castVal, _ := Bool(val)

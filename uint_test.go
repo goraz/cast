@@ -169,7 +169,7 @@ func TestUintCast(t *testing.T) {
 		So(err, ShouldNotEqual, nil)
 	})
 
-	Convey("Cast int to uint", t, func() {
+	Convey("Cast bool to uint", t, func() {
 		val := true
 		castVal, _ := Uint(val)
 		So(castVal, ShouldEqual, 1)
@@ -177,6 +177,11 @@ func TestUintCast(t *testing.T) {
 		falseVal := false
 		castFalseVal, _ := Uint(falseVal)
 		So(castFalseVal, ShouldEqual, 0)
+	})
+
+	Convey("Cast nil to uint", t, func() {
+		castVal, _ := Uint(nil)
+		So(castVal, ShouldEqual, 0)
 	})
 
 	Convey("Cast string to uint", t, func() {

@@ -90,6 +90,9 @@ func Uint(input interface{}) (output uint64, err error) {
 			output = uint64(1)
 		}
 		return
+	case nil:
+		output = uint64(0)
+		return
 	default:
 		err = NewCastError("Could not convert to uint")
 	}

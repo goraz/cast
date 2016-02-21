@@ -86,6 +86,9 @@ func Bool(input interface{}) (output bool, err error) {
 	case bool:
 		output = castValue
 		return
+	case nil:
+		output = false
+		return
 	default:
 		err = NewCastError("Could not convert to bool")
 	}

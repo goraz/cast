@@ -162,7 +162,7 @@ func TestIntCast(t *testing.T) {
 		So(castNegativeVal, ShouldEqual, -1)
 	})
 
-	Convey("Cast int to int", t, func() {
+	Convey("Cast bool to int", t, func() {
 		val := true
 		castVal, _ := Int(val)
 		So(castVal, ShouldEqual, 1)
@@ -170,6 +170,11 @@ func TestIntCast(t *testing.T) {
 		falseVal := false
 		castFalseVal, _ := Int(falseVal)
 		So(castFalseVal, ShouldEqual, 0)
+	})
+
+	Convey("Cast nil to int", t, func() {
+		castVal, _ := Int(nil)
+		So(castVal, ShouldEqual, 0)
 	})
 
 	Convey("Cast string to int", t, func() {

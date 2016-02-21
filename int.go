@@ -62,6 +62,9 @@ func Int(input interface{}) (output int64, err error) {
 			output = int64(1)
 		}
 		return
+	case nil:
+		output = int64(0)
+		return
 	default:
 		err = NewCastError("Could not convert to int")
 	}
