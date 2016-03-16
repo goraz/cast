@@ -16,7 +16,10 @@ func FloatSlice(input interface{}) (output []float64, err error) {
 	case []string:
 		output = make([]float64, len(castValue))
 		for index := range castValue {
-			output[index], _ = Float(castValue[index])
+			if output[index], castError = Float(castValue[index]); castError != nil {
+				//todo. return better error
+				err = NewCastError("Could not convert to string")
+			}
 		}
 		return
 	case []interface{}:

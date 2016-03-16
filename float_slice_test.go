@@ -111,6 +111,15 @@ func TestFloatSliceCast(t *testing.T) {
 		So(reflect.DeepEqual(castVal, []float64{1, 2, 3}), ShouldBeTrue)
 	})
 
+	Convey("Cast invalid []string to []float6", t, func() {
+
+		val := []string{"1", "a", "3"}
+		castVal, err := FloatSlice(val)
+
+		So(reflect.DeepEqual(castVal, []float64{1, 0, 3}), ShouldBeTrue)
+		So(err, ShouldNotEqual, nil)
+	})
+
 	Convey("Cast []NotFloatStringCaster to []float6 and return Error", t, func() {
 		val := NotFloatStringCaster{}
 		castVal, err := FloatSlice(val)

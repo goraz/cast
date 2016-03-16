@@ -16,7 +16,11 @@ func IntSlice(input interface{}) (output []int64, err error) {
 	case []string:
 		output = make([]int64, len(castValue))
 		for index := range castValue {
-			output[index], _ = Int(castValue[index])
+			if output[index], castError = Int(castValue[index]); castError != nil {
+				//todo. return better error
+				err = NewCastError("Could not convert to string")
+			}
+
 		}
 		return
 	case []interface{}:

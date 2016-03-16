@@ -111,6 +111,15 @@ func TestIntSliceCast(t *testing.T) {
 		So(reflect.DeepEqual(castVal, []int64{1, 2, 3}), ShouldBeTrue)
 	})
 
+	Convey("Cast invalid []string to []int64", t, func() {
+
+		val := []string{"1", "a", "3"}
+		castVal, err := IntSlice(val)
+
+		So(reflect.DeepEqual(castVal, []int64{1, 0, 3}), ShouldBeTrue)
+		So(err, ShouldNotEqual, nil)
+	})
+
 	Convey("Cast []NotIntStringCaster to []int64 and return Error", t, func() {
 		val := NotIntStringCaster{}
 		castVal, err := IntSlice(val)
