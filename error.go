@@ -10,6 +10,6 @@ func (e *Error) Error() string {
 }
 
 // NewCastError returns an error that formats as the given text
-func NewCastError(text string) error {
+func NewCastError(text string) *Error {
 	return &Error{text}
 }

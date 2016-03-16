@@ -66,7 +66,7 @@ func Float(input interface{}) (output float64, err error) {
 		output = float64(0)
 		return
 	default:
-		err = NewCastError("Could not convert to floar64")
+		err = NewCastError("Could not convert to float64")
 	}
 	return
 }
