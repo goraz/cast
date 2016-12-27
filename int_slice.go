@@ -18,7 +18,7 @@ func IntSlice(input interface{}) (output []int64, err error) {
 		for index := range castValue {
 			if output[index], castError = Int(castValue[index]); castError != nil {
 				//todo. return better error
-				err = NewCastError("Could not convert to string")
+				err = NewCastError("Could not convert to int64")
 			}
 
 		}
@@ -28,7 +28,7 @@ func IntSlice(input interface{}) (output []int64, err error) {
 		for index := range castValue {
 			if output[index], castError = Int(castValue[index]); castError != nil {
 				//todo. return better error
-				err = NewCastError("Could not convert to string")
+				err = NewCastError("Could not convert to int64")
 			}
 		}
 		return

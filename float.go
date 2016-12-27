@@ -19,6 +19,8 @@ func Float(input interface{}) (output float64, err error) {
 		return
 	case string:
 		output, err = strconv.ParseFloat(castValue, 64)
+	case []byte:
+		output, err = strconv.ParseFloat(string(castValue), 64)
 		return
 	case int:
 		output = float64(castValue)

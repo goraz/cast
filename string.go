@@ -20,6 +20,9 @@ func String(input interface{}) (output string, err error) {
 	case string:
 		output = string(castValue)
 		return
+	case []byte:
+		output = string(castValue)
+		return
 	case int:
 		output = strconv.Itoa(castValue)
 		return

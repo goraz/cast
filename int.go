@@ -20,6 +20,9 @@ func Int(input interface{}) (output int64, err error) {
 	case string:
 		output, err = strconv.ParseInt(castValue, 10, 64)
 		return
+	case []byte:
+		output, err = strconv.ParseInt(string(castValue), 10, 64)
+		return
 	case int:
 		output = int64(castValue)
 		return

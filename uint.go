@@ -20,6 +20,9 @@ func Uint(input interface{}) (output uint64, err error) {
 	case string:
 		output, err = strconv.ParseUint(castValue, 10, 64)
 		return
+	case []byte:
+		output, err = strconv.ParseUint(string(castValue), 10, 64)
+		return
 	case int:
 		if castValue < 0 {
 			err = NewCastError("Could not convert negative value to uint")
