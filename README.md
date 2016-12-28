@@ -5,8 +5,11 @@ cast
 [![Coverage Status](https://coveralls.io/repos/github/goraz/cast/badge.svg?branch=master)](https://coveralls.io/github/goraz/cast?branch=master)
 [![GoDoc](https://godoc.org/github.com/goraz/cast?status.svg)](https://godoc.org/github.com/goraz/cast)
 
-Cast is a package that can cast different go types to another types.
-you don't need to be woried about performan beacuse this package doesn't use reflect package so it's fast enough
+Cast is a package that can cast different go types to other types.
+You don't need to be worried about performance because this package doesn't use reflect package so it's fast enough
+
+
+
 
 ## Installiton
 
@@ -26,7 +29,7 @@ castVal, _ := String(nil) // "false"
 ```
 
 
-Also there are equivalent MustString, MustInt, MustFloat, MustDuration, MustBool and MustUint functions which instead of returning error, make a panic error
+Also, there are equivalent MustString, MustInt, MustFloat, MustDuration, MustBool and MustUint functions which instead of returning error, make a panic error
 
 ## Example:
 
@@ -42,4 +45,4 @@ For more examples read tests
 
 Contributing
 ------------
-If you are interested in contributing in this project please create a pull request. I appreciate your help!
+If you are interested in contributing to this project please create a pull request. I appreciate your help!
